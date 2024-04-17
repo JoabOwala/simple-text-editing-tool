@@ -1,7 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"os"
+	"simple-text-editing-tool/capitalize"
+	"strings"
 )
 
 func main(){
@@ -20,4 +23,23 @@ func main(){
 		println("Error reading from File: ",err)
 		return
 	}
+
+	// COnvert into string
+	toString := strings.Fields(string(readSample))
+	
+	// Manipulate the data with required functions
+	dataManip := capitalize.Cap(toString)
+
+	// Join the slice of strings
+	toJoin := strings.Join(dataManip, " ")
+	// COnvert to Byte for writing
+	toByte := []byte(toJoin)
+
+	err = os.WriteFile(resultText, toByte, 0o644)
+	if err != nil{
+		println("Error writing to file :", err)
+		return
+	}
+
+	fmt.Printf("Successfully Updated, %v \n", resultText)
 }
