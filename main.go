@@ -6,6 +6,7 @@ import (
 	"simple-text-editing-tool/binhexa"
 	"simple-text-editing-tool/capitalize"
 	"simple-text-editing-tool/lower"
+	"simple-text-editing-tool/vowel"
 	"strings"
 )
 
@@ -34,6 +35,7 @@ func main(){
 	toString = lower.Low(toString)
 	toString = binhexa.Bin(toString)
 	toString = binhexa.Hex(toString)
+	toString = vowel.Vow(toString)
 
 	// Join the slice of strings
 	toJoin := strings.Join(toString, " ")
