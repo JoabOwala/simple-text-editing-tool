@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"simple-text-editing-tool/capitalize"
+	"simple-text-editing-tool/lower"
 	"strings"
 )
 
@@ -24,14 +25,15 @@ func main(){
 		return
 	}
 
-	// COnvert into string
+	// COnvert into slice of string
 	toString := strings.Fields(string(readSample))
 	
 	// Manipulate the data with required functions
-	dataManip := capitalize.Cap(toString)
+	toString= capitalize.Cap(toString)
+	toString = lower.Low(toString)
 
 	// Join the slice of strings
-	toJoin := strings.Join(dataManip, " ")
+	toJoin := strings.Join(toString, " ")
 	// COnvert to Byte for writing
 	toByte := []byte(toJoin)
 
