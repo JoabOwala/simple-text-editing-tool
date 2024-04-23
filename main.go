@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"os"
+	"simple-text-editing-tool/apostro"
 	"simple-text-editing-tool/binhexa"
 	"simple-text-editing-tool/capitalize"
 	"simple-text-editing-tool/lower"
+	"simple-text-editing-tool/punctuation"
 	"simple-text-editing-tool/vowel"
 	"strings"
 )
@@ -36,6 +38,8 @@ func main(){
 	toString = binhexa.Bin(toString)
 	toString = binhexa.Hex(toString)
 	toString = vowel.Vow(toString)
+	toString = punctuation.Punc(toString)
+	toString = apostro.Apos(toString)
 
 	// Join the slice of strings
 	toJoin := strings.Join(toString, " ")
