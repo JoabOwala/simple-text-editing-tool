@@ -33,6 +33,7 @@ func main(){
 	toString= capitalize.Cap(toString)
 	toString = lower.Low(toString)
 	toString = binhexa.Bin(toString)
+	toString = binhexa.Hex(toString)
 
 	// Join the slice of strings
 	toJoin := strings.Join(toString, " ")
