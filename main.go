@@ -8,6 +8,7 @@ import (
 	"simple-text-editing-tool/capitalize"
 	"simple-text-editing-tool/lower"
 	"simple-text-editing-tool/punctuation"
+	"simple-text-editing-tool/upper"
 	"simple-text-editing-tool/vowel"
 	"strings"
 )
@@ -37,6 +38,7 @@ func main(){
 	toString = lower.Low(toString)
 	toString = binhexa.Bin(toString)
 	toString = binhexa.Hex(toString)
+	toString = upper.Up(toString)
 	toString = vowel.Vow(toString)
 	toString = punctuation.Punc(toString)
 	toString = apostro.Apos(toString)
