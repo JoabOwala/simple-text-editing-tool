@@ -1,7 +1,7 @@
 package vowel
 
 func Vow(data []string) []string{
-	myVowels := []string {"a","e","i","o","u",}
+	myVowels := []string {"a","e","i","o","u","h"}
 
 	for i, cha := range data{
 		for _, cha2 := range myVowels{
