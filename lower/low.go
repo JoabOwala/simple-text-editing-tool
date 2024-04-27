@@ -17,12 +17,11 @@ func Low(data []string) []string{
 					data[j] =strings.ToLower(data[j])
 				}
 				data = append(data[:i],data[i+2:]...)
+				}else if strings.Contains(data[i], "(low)"){
+					data[i-1] = strings.ToLower(data[i-1])
+					data = append(data[:i],data[i+1:]...)
+				}
 			}
-		}else if strings.Contains(data[i], "(low)"){
-			data[i-1] = strings.ToLower(data[i-1])
-
-			data = append(data[:i],data[i+1:]...)
-		}
 	}
 	return data
 }
