@@ -18,11 +18,11 @@ func Up(data []string) []string{
 				}
 				data = append(data[:i],data[i+2:]...)
 				
+				}else if strings.Contains(data[i], "(up)"){
+					data[i-1] = strings.ToUpper(data[i-1])
+					data = append(data[:i],data[i+1:]...)
+				}
 			}
-		}else if strings.Contains(data[i], "(up)"){
-			data[i] = strings.ToUpper(data[i])
-			data = append(data[:i],data[i+1:]...)
-		}
 	}
 	return data
 }
